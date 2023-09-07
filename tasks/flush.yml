@@ -7,6 +7,9 @@
   changed_when: true
   notify: "notify handler"
 
+- name: Flush handlers
+  ansible.builtin.meta: flush_handlers
+
 - name: After flush
   ansible.builtin.command:
     cmd: 'echo "After flush!"'
