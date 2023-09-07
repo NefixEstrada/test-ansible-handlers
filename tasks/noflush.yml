@@ -1,0 +1,8 @@
+---
+# tasks file for test_handlers
+
+- name: Before handler
+  ansible.builtin.command:
+    cmd: 'echo "Before handler!"'
+  changed_when: true
+  notify: "notify handler"

@@ -1,0 +1,60 @@
+---
+- name: Converge
+  hosts: molecule
+  gather_facts: false
+  tasks:
+    - name: "Include the role"
+      ansible.builtin.include_role:
+        name: "test.test_handlers"
+        tasks_from: flush
+    
+    - name: "Between includes!"
+      ansible.builtin.debug:
+        msg: "Between includes!"
+
+    - name: "Include the role"
+      ansible.builtin.include_role:
+        name: "test.test_handlers"
+        tasks_from: flush
+
+    # - name: "Import the role"
+    #   ansible.builtin.import_role:
+    #     name: "test.test_handlers"
+    #     tasks_from: flush
+    
+    # - name: "Between includes!"
+    #   ansible.builtin.debug:
+    #     msg: "Between includes!"
+
+    # - name: "Import the role"
+    #   ansible.builtin.import_role:
+    #     name: "test.test_handlers"
+    #     tasks_from: flush
+
+    # - name: "Include the role no flush"
+    #   ansible.builtin.include_role:
+    #     name: "test.test_handlers"
+    #     tasks_from: noflush
+    
+    # - name: "Between includes!"
+    #   ansible.builtin.debug:
+    #     msg: "Between includes!"
+
+    # - name: "Include the role no flush"
+    #   ansible.builtin.include_role:
+    #     name: "test.test_handlers"
+    #     tasks_from: noflush
+
+    # - name: "Import the role no flush"
+    #   ansible.builtin.import_role:
+    #     name: "test.test_handlers"
+    #     tasks_from: noflush
+    
+    # - name: "Between includes!"
+    #   ansible.builtin.debug:
+    #     msg: "Between includes!"
+
+    # - name: "Import the role no flush"
+    #   ansible.builtin.import_role:
+    #     name: "test.test_handlers"
+    #     tasks_from: noflush

@@ -1,0 +1,7 @@
+---
+# handlers file for test_handlers
+
+- name: Handler
+  ansible.builtin.command:
+    cmd: 'echo "HANDLER EXECUTED!"'
+  listen: "notify handler"
